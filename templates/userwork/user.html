@@ -1,12 +1,33 @@
 {% extends 'userwork/base.html' %}
 
 {% block body %}
-    <div class="container">
-        <div class="form-group row">
-
-            <label for="inputPassword" class="col-sm-2 col-form-label">Сообщение</label>
-            {{ form.msg }}
+    <form method="POST">
+        {% csrf_token %}
+        <div class="container">
+            <div class="form-group row">
+                <label for="inputPassword" class="col-sm-2 col-form-label">Сообщение</label>
+                {{ form.msg }}
+            </div>
+            <button type="submit">
+                OK
+            </button>
         </div>
-
+    </form>
+    <hr>
+    <div class="container">
+        <div class="row">
+            {% for el in obj %}
+                <div class="col-8">
+                    <div class="card card-white post">
+                        <div class="post-description">
+                            <p>
+                                {{ el }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
     </div>
+
 {% endblock %}

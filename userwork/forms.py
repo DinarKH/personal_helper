@@ -7,5 +7,5 @@ class MessageForm(forms.ModelForm):
         model = models.Message
         fields = ['msg']
         widgets = {
-            'msg': forms.TimeInput(attrs={'class': 'form-control'})
+            'msg': forms.Textarea(attrs={'class': 'form-control','rows':3})
         }

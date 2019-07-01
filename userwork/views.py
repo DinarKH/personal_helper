@@ -1,4 +1,4 @@
 from django.shortcuts import render, HttpResponse
 
 def test(request):
-    return HttpResponse('hello')
+    return render(request,'userwork/user.html',{})

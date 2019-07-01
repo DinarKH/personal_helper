@@ -1,4 +1,8 @@
 from django.shortcuts import render, HttpResponse
+from . import forms
 
 def test(request):
-    return render(request,'userwork/user.html',{})
+    msg_form = forms.MessageForm
+    return render(request,'userwork/user.html',{
+        'form': msg_form,
+    })

@@ -2,6 +2,10 @@
 
 {% block body %}
     <div class="container">
-        Привет
+        <div class="form-group row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Сообщение</label>
+            {{ form.msg }}
+        </div>
+
     </div>
 {% endblock %}
